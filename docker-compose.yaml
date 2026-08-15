@@ -61,6 +61,13 @@ services:
     image: redis:7
     container_name: redis
 
+  rabbitmq:
+    build: ./rabbitmq
+    image: joindevops/rabbitmq:3
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: roboshop
+      RABBITMQ_DEFAULT_PASS: roboshop123
   mysql:
     image: joindevops/mysql:4.0.0
     build: ./mysql
