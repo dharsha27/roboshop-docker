@@ -22,6 +22,8 @@ services:
       - catalogue
       - user
       - cart
+      - shipping
+      - payment
   user:
     build: ./user
     image: joindevops/user:v1
@@ -60,6 +62,23 @@ services:
   redis:
     image: redis:7
     container_name: redis
+
+  payment:
+    build: ./payment
+    image: joindevops/payment:3
+    container_name: payment
+    environment:
+      CART_HOST: "cart"
+      CART_PORT: 8080
+      USER_HOST: user
+      USER_POST: 8080
+      AMQP_HOST: rabbitmq
+      AMQP_USER: roboshop
+      AMQP_PASS: roboshop123
+    depends_on:
+      - cart
+      - user
+      - rabbitmq
 
   rabbitmq:
     build: ./rabbitmq
