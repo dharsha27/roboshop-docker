@@ -10,4 +10,4 @@ EXPOSE 8080
 #     chown -R roboshop:roboshop /app
 # COPY --from=builder /app /app
 # USER roboshop
-CMD ["java", "shipping.jar"]
+CMD ["java","-jar", "shipping.jar"]
