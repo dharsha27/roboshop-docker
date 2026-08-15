@@ -81,8 +81,8 @@ services:
       - rabbitmq
 
   rabbitmq:
-    build: ./rabbitmq
-    image: joindevops/rabbitmq:3
+    # build: ./rabbitmq
+    image: rabbitmq:3
     container_name: rabbitmq
     environment:
       RABBITMQ_DEFAULT_USER: roboshop
