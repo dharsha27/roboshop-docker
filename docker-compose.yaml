@@ -67,7 +67,7 @@ services:
       - redis:/data
   payment:
     build: ./payment
-    image: joindevops/payment:3
+    image: joindevops/payment:4.0.0
     container_name: payment
     environment:
       CART_HOST: "cart"
