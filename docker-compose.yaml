@@ -10,6 +10,9 @@ services:
     build: ./catalogue
     image: joindevops/catalogue:v1
     container_name: catalogue
+    environment:
+      MONGO: "true"
+      MONGO_URL: "mongodb://mongodb:27017/catalogue"
     depends_on:
       - mongodb
 
@@ -73,7 +76,7 @@ services:
       CART_HOST: "cart"
       CART_PORT: 8080
       USER_HOST: user
-      USER_POST: 8080
+      USER_PORT: 8080
       AMQP_HOST: rabbitmq
       AMQP_USER: roboshop
       AMQP_PASS: roboshop123
