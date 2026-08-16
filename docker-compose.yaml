@@ -53,10 +53,9 @@ services:
       - cart
   cart:
     build: ./cart
-    image: joindevops/cart:v1
+    image: joindevops/cart:4.0.0
     container_name: cart
     environment:
-
       REDIS_HOST: redis
       CATALOGUE_HOST: catalogue
       CATALOGUE_PORT: 8080
