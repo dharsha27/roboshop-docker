@@ -106,6 +106,7 @@ networks:
     name: roboshop
     driver: bridge
     external: false
+
 volumes:
   mongodb:
   redis:
