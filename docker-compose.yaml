@@ -53,6 +53,7 @@ services:
     environment:
       CART_ENDPOINT: "cart:8080"
       DB_HOST: mysql
+      MYSQL_ROOT_PASSWORD: "RoboShop@1"
     depends_on:
       - mysql
       - cart
